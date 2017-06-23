@@ -5,7 +5,7 @@ Solutions to [Project Euler](https://projecteuler.net/archives). They are either
 License
 --------
 
-	Copyright 2016 Alex Dao.
+	Copyright 2017 Alex Dao.
 
     Licensed under the do-whatever-the-gosh-darn-you-want-with-it license.
-		The license text is "do whatever the gosh darn you want with it". 
+	The license text is "do whatever the gosh darn you want with it". 
