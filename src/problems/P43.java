@@ -9,11 +9,38 @@ import java.math.BigInteger;
  */
 public class P43 {
 
-    public static void main (String args[]) {
+    public static void main(String args[]) {
+        int maxConsecutivePrimes = 0;
+        int maxA = 0;
+        int maxB = 0;
+        for (int a = -999; a <= 999; a++) {
+            for (int b = -999; b <= 1000; b++) {
+                int currMax = calcNumOfConsecutivePrimes(a, b);
+                if (currMax > maxConsecutivePrimes) {
+                    maxConsecutivePrimes = currMax;
+                    maxA = a;
+                    maxB = b;
+                }
+            }
+        }
 
-        BigInteger test = new BigInteger("0");
-        boolean x = Util.isPrime(test);
+        System.out.println(maxA * maxB);
     }
 
+    private static int calcNumOfConsecutivePrimes(int a, int b) {
+        int counter = 0;
+        while (true) {
+            int quadraticRes = calcQuadratic(a, b, counter);
+            if (!Util.isPrime(new BigInteger("" + quadraticRes))) {
+                break;
+            }
+            counter++;
+        }
+        return counter;
+    }
+
+    private static int calcQuadratic(int a, int b, int n) {
+        return n * n + a * n + b;
+    }
 
 }
