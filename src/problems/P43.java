@@ -1,46 +1,53 @@
 package problems;
 
-import util.Util;
-
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Created by alex on 6/22/17.
- */
 public class P43 {
 
     public static void main(String args[]) {
-        int maxConsecutivePrimes = 0;
-        int maxA = 0;
-        int maxB = 0;
-        for (int a = -999; a <= 999; a++) {
-            for (int b = -999; b <= 1000; b++) {
-                int currMax = calcNumOfConsecutivePrimes(a, b);
-                if (currMax > maxConsecutivePrimes) {
-                    maxConsecutivePrimes = currMax;
-                    maxA = a;
-                    maxB = b;
-                }
+        BigInteger sum = BigInteger.ZERO;
+        for (long i = 1023456789L; i <= 9876543210L; i++) {
+            if (!checkUsesEveryDigit(i)) {
+                continue;
+            }
+            if (hasDivisibilityProperty(i)) {
+                System.out.println(i);
+                sum = sum.add(new BigInteger("" + i));
             }
         }
-
-        System.out.println(maxA * maxB);
+        System.out.println(sum);
     }
 
-    private static int calcNumOfConsecutivePrimes(int a, int b) {
-        int counter = 0;
-        while (true) {
-            int quadraticRes = calcQuadratic(a, b, counter);
-            if (!Util.isPrime(new BigInteger("" + quadraticRes))) {
-                break;
+    private static boolean checkUsesEveryDigit(long n) {
+        String num = "" + n;
+        List<Character> chars = new ArrayList<>();
+        for (int i = 0; i < num.length(); i++) {
+            if (chars.contains(num.charAt(i))) {
+                return false;
             }
-            counter++;
+            chars.add(num.charAt(i));
         }
-        return counter;
+        return true;
     }
 
-    private static int calcQuadratic(int a, int b, int n) {
-        return n * n + a * n + b;
-    }
+    private static boolean hasDivisibilityProperty(long n) {
+        String num = "" + n;
+        String first = num.substring(1, 4);
+        String second = num.substring(2, 5);
+        String third = num.substring(3, 6);
+        String fourth = num.substring(4, 7);
+        String fifth = num.substring(5, 8);
+        String sixth = num.substring(6, 9);
+        String seventh = num.substring(7, 10);
 
+        return !(Integer.valueOf(first) % 2 != 0 ||
+                Integer.valueOf(second) % 3 != 0 ||
+                Integer.valueOf(third) % 5 != 0 ||
+                Integer.valueOf(fourth) % 7 != 0 ||
+                Integer.valueOf(fifth) % 11 != 0 ||
+                Integer.valueOf(sixth) % 13 != 0 ||
+                Integer.valueOf(seventh) % 17 != 0);
+    }
 }
