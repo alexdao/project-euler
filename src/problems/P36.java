@@ -2,6 +2,10 @@ package problems;
 
 import util.Util;
 
+/**
+ * https://projecteuler.net/problem=36
+ */
+
 public class P36 {
 
     public static void main(String args[]) {

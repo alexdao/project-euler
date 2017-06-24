@@ -4,6 +4,10 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * https://projecteuler.net/problem=43
+ */
+
 public class P43 {
 
     public static void main(String args[]) {
