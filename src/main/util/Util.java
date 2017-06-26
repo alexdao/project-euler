@@ -22,16 +22,16 @@ public class Util {
         return true;
     }
 
-    static boolean isPrime(int n){
-        if(n <= 1)
+    static boolean isPrime(int n) {
+        if (n <= 1)
             return false;
-        else if (n<=3)
+        else if (n <= 3)
             return true;
         else if (n % 2 == 0 || n % 3 == 0)
             return false;
         int i = 5;
-        while(i*i <= n){
-            if(n%i == 0 || n % (i+2)== 0){
+        while (i * i <= n) {
+            if (n % i == 0 || n % (i + 2) == 0) {
                 return false;
             }
             i += 6;
@@ -40,8 +40,8 @@ public class Util {
     }
 
     static boolean isPalindrone(String s) {
-        for(int i=0; i<=s.length()/2; i++) {
-            if(s.charAt(i) != s.charAt(s.length()-i-1)) {
+        for (int i = 0; i <= s.length() / 2; i++) {
+            if (s.charAt(i) != s.charAt(s.length() - i - 1)) {
                 return false;
             }
         }
@@ -54,6 +54,9 @@ public class Util {
     }
 
     static long calcFactorial(long n) {
+        if (n == 0) {
+            return 1;
+        }
         long sum = 1;
         for (long i = 1; i <= n; i++) {
             sum *= i;
@@ -62,7 +65,36 @@ public class Util {
         return sum;
     }
 
-    public static void main (String args[]) {
+    static class Fraction {
+        int numerator;
+        int denominator;
+
+        Fraction(int numerator, int denominator) {
+            this.numerator = numerator;
+            this.denominator = denominator;
+        }
+
+        void simplifyFraction() {
+            for (int i = 2; i <= numerator; i++) {
+                if (numerator % i == 0 && denominator % i == 0) {
+                    numerator /= i;
+                    denominator /= i;
+                    simplifyFraction();
+                    break;
+                }
+            }
+        }
+
+        int getDenominator() {
+            return denominator;
+        }
+
+        int getNumerator() {
+            return numerator;
+        }
+    }
+
+    public static void main(String args[]) {
         String s = "1234321";
         System.out.println(isPalindrone(s));
     }
