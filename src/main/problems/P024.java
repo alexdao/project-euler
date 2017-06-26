@@ -26,6 +26,6 @@ public class P024 implements Problem {
         String num = "0123456789";
         List<String> permutations = new ArrayList<>();
         permute("", num, permutations);
-        return permutations.get(1000000);
+        return permutations.get(1000000-1);
     }
 }

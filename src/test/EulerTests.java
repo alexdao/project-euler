@@ -126,7 +126,7 @@ class EulerTests {
 
     @Test
     void P028Test() {
-        assertEquals(new P028().solve(), "669171001");
+        assertEquals(new P028().solve(), "6.69171001E8");
     }
 
     @Test

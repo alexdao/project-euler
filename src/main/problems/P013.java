@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,15 +16,21 @@ public class P013 implements Problem {
 
     @Override
     public String solve() {
-        Scanner in = new Scanner(System.in);
-        List<BigInteger> nums = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
-            nums.add(new BigInteger(in.nextLine()));
+        try {
+            Scanner in = new Scanner(new FileReader("data/p013_data.txt"));
+            List<BigInteger> nums = new ArrayList<>();
+            for (int i = 0; i < 100; i++) {
+                nums.add(new BigInteger(in.nextLine()));
+            }
+            BigInteger total = new BigInteger("0");
+            for (BigInteger i : nums) {
+                total = total.add(i);
+            }
+            in.close();
+            return total.toString().substring(0, 10);
+        } catch (FileNotFoundException e) {
+            return e.toString();
         }
-        BigInteger total = new BigInteger("0");
-        for (BigInteger i : nums) {
-            total = total.add(i);
-        }
-        return total.toString().substring(0, 10);
+
     }
 }

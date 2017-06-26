@@ -21,7 +21,6 @@ public class P032 implements Problem {
                 String second = leftSide.substring(j);
                 if (Long.parseLong(first) * Long.parseLong(second)
                         == Long.parseLong(rightSide)) {
-                    System.out.println(n);
                     return Long.parseLong(rightSide);
                 }
             }
