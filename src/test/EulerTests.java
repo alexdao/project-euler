@@ -160,6 +160,11 @@ class EulerTests {
     }
 
     @Test
+    void P035Test() {
+        assertEquals(new P035().solve(), "55");
+    }
+
+    @Test
     void P036Test() {
         assertEquals(new P036().solve(), "872187");
     }
