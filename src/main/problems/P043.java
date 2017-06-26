@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * https://projecteuler.net/problem=43
+ * This one takes a while.. Can probably do it more efficiently
  */
 
 public class P043 implements Problem {
@@ -51,7 +52,6 @@ public class P043 implements Problem {
                 continue;
             }
             if (hasDivisibilityProperty(i)) {
-                System.out.println(i);
                 sum = sum.add(new BigInteger("" + i));
             }
         }
