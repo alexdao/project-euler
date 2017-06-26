@@ -1,36 +1,20 @@
-package problems;
-
-import java.util.*;
-
 /**
- * Created by alex on 5/11/16.
+ * https://projecteuler.net/problem=10
  */
-public class P010 {
+public class P010 implements Problem {
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
+        System.out.println(new P010().solve());
+    }
+
+    @Override
+    public String solve() {
         long total = 0;
-        for(int i=2; i<2000000; i++){
-            if(isPrime(i)){
+        for (int i = 2; i < 2000000; i++) {
+            if (Util.isPrime(i)) {
                 total += i;
             }
         }
-        System.out.print(total);
-    }
-
-    private static boolean isPrime(int n){
-        if(n <= 1)
-            return false;
-        else if (n<=3)
-            return true;
-        else if (n % 2 == 0 || n % 3 == 0)
-            return false;
-        int i = 5;
-        while(i*i <= n){
-            if(n%i == 0 || n % (i+2)== 0){
-                return false;
-            }
-            i += 6;
-        }
-        return true;
+        return Long.toString(total);
     }
 }

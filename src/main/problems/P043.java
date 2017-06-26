@@ -1,5 +1,3 @@
-package problems;
-
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,20 +6,10 @@ import java.util.List;
  * https://projecteuler.net/problem=43
  */
 
-public class P043 {
+public class P043 implements Problem {
 
     public static void main(String args[]) {
-        BigInteger sum = BigInteger.ZERO;
-        for (long i = 1023456789L; i <= 9876543210L; i++) {
-            if (!checkUsesEveryDigit(i)) {
-                continue;
-            }
-            if (hasDivisibilityProperty(i)) {
-                System.out.println(i);
-                sum = sum.add(new BigInteger("" + i));
-            }
-        }
-        System.out.println(sum);
+        System.out.println(new P043().solve());
     }
 
     private static boolean checkUsesEveryDigit(long n) {
@@ -53,5 +41,20 @@ public class P043 {
                 Integer.valueOf(fifth) % 11 != 0 ||
                 Integer.valueOf(sixth) % 13 != 0 ||
                 Integer.valueOf(seventh) % 17 != 0);
+    }
+
+    @Override
+    public String solve() {
+        BigInteger sum = BigInteger.ZERO;
+        for (long i = 1023456789L; i <= 9876543210L; i++) {
+            if (!checkUsesEveryDigit(i)) {
+                continue;
+            }
+            if (hasDivisibilityProperty(i)) {
+                System.out.println(i);
+                sum = sum.add(new BigInteger("" + i));
+            }
+        }
+        return sum.toString();
     }
 }

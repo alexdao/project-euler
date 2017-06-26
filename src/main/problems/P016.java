@@ -1,12 +1,16 @@
-package problems;
-
 import java.math.BigInteger;
 
 /**
- * Created by alex on 5/12/16.
+ * https://projecteuler.net/problem=16
  */
-public class P016 {
+public class P016 implements Problem{
+
     public static void main(String args[]){
+        System.out.println(new P016().solve());
+    }
+
+    @Override
+    public String solve() {
         BigInteger two = new BigInteger("2");
         BigInteger curr = new BigInteger("2");
         for(int i=1; i<1000; i++){
@@ -17,6 +21,6 @@ public class P016 {
         for(int i=0; i<bigNum.length(); i++){
             sum += Integer.parseInt(bigNum.substring(i, i+1));
         }
-        System.out.print(sum);
+        return Long.toString(sum);
     }
 }

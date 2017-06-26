@@ -1,21 +1,10 @@
-package problems;
-
 /**
- * Created by alex on 11/14/16.
  * Problem: https://projecteuler.net/problem=34
  */
-public class P034 {
+public class P034 implements Problem {
 
     public static void main(String args[]) {
-        long sum = 0;
-
-        // max it can be is a 7 digit number
-        for (int i = 3; i <= 9999999; i++) {
-            if (isSumOfFactorial(i)) {
-                sum += i;
-            }
-        }
-        System.out.println(sum);
+        System.out.println(new P034().solve());
     }
 
     private static boolean isSumOfFactorial(long n) {
@@ -24,17 +13,21 @@ public class P034 {
         while (temp != 0) {
             long curr = temp % 10;
             temp /= 10;
-            sum += calcFactorial(curr);
+            sum += Util.calcFactorial(curr);
         }
         return sum == n;
     }
 
-    private static long calcFactorial(long n) {
-        long sum = 1;
-        for (long i = 1; i <= n; i++) {
-            sum *= i;
+    @Override
+    public String solve() {
+        long sum = 0;
 
+        // max it can be is a 7 digit number
+        for (int i = 3; i <= 9999999; i++) {
+            if (isSumOfFactorial(i)) {
+                sum += i;
+            }
         }
-        return sum;
+        return Long.toString(sum);
     }
 }

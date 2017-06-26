@@ -1,30 +1,31 @@
-package problems;
-
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by alex on 6/15/16.
+ * https://projecteuler.net/problem=24
  */
-public class P024 {
-
-    private static int count = 0;
+public class P024 implements Problem {
 
     public static void main(String args[]) {
-        String num = "0123456789";
-        permute("", num);
+        System.out.println(new P024().solve());
     }
 
-    private static void permute(String prefix, String str) {
+    private static void permute(String prefix, String str, List<String> permutations) {
         int n = str.length();
         if (n == 0) {
-            count++;
-            if (count == 1000000) {
-                System.out.println(prefix);
-            }
+            permutations.add(prefix);
         } else {
             for (int i = 0; i < n; i++) {
-                permute(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1, n));
+                permute(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1, n), permutations);
             }
         }
+    }
+
+    @Override
+    public String solve() {
+        String num = "0123456789";
+        List<String> permutations = new ArrayList<>();
+        permute("", num, permutations);
+        return permutations.get(1000000);
     }
 }

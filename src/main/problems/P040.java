@@ -1,25 +1,13 @@
-package problems;
-
 /**
- * Created by alex on 6/22/17.
  * https://projecteuler.net/problem=40
  */
-public class P040 {
+public class P040 implements Problem {
 
     private static long digitCount = 0;
     private static long output = 1;
 
     public static void main(String args[]) {
-        long currNum = 1;
-
-        while(true) {
-            checkLength(currNum);
-            if (digitCount == -1) {
-                System.out.println(output);
-                return;
-            }
-            currNum++;
-        }
+        System.out.println(new P040().solve());
     }
 
     private static void checkLength(long currNum) {
@@ -31,12 +19,25 @@ public class P040 {
                     digitCount == 100000 || digitCount == 1000000) {
                 System.out.println("found digit" + currNum);
 
-                output *= Long.parseLong(""+Long.toString(currNum).charAt(i-1));
+                output *= Long.parseLong("" + Long.toString(currNum).charAt(i - 1));
             }
         }
 
         if (digitCount > 1000000) {
             digitCount = -1;
+        }
+    }
+
+    @Override
+    public String solve() {
+        long currNum = 1;
+
+        while (true) {
+            checkLength(currNum);
+            if (digitCount == -1) {
+                return Long.toString(output);
+            }
+            currNum++;
         }
     }
 }

@@ -1,31 +1,31 @@
-package problems;
-
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
- * Created by alex on 5/12/16.
+ * https://projecteuler.net/problem=14
  */
-public class P014 {
+public class P014 implements Problem {
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
+        System.out.println(new P014().solve());
+    }
+
+    @Override
+    public String solve() {
         Map<Long, Long> visited = new HashMap<>();
         long max = 0;
         long maxPath = 0;
-        for(int i=1; i<1000000; i++){
+        for (int i = 1; i < 1000000; i++) {
             long pathLength = 1;
             long curr = i;
-            while(curr != 1){
-                if(visited.containsKey(curr)){
+            while (curr != 1) {
+                if (visited.containsKey(curr)) {
                     pathLength += visited.get(curr);
                     break;
                 }
-                if(curr % 2 == 0){
+                if (curr % 2 == 0) {
                     curr /= 2;
-                }
-                else{
+                } else {
                     curr = 3 * curr + 1;
                 }
                 pathLength++;
@@ -33,11 +33,11 @@ public class P014 {
 
             visited.put(curr, pathLength);
 
-            if(pathLength > maxPath){
+            if (pathLength > maxPath) {
                 maxPath = pathLength;
                 max = i;
             }
         }
-        System.out.print(max);
+        return Long.toString(max);
     }
 }

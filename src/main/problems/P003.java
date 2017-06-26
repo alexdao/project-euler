@@ -1,13 +1,9 @@
-package problems;
-
-import util.Util;
-
 import java.math.BigInteger;
 
 /**
  * https://projecteuler.net/problem=3
  */
-public class P003 implements Problem{
+public class P003 implements Problem {
 
     public static void main(String args[]) {
         System.out.println(new P003().solve());
@@ -20,7 +16,7 @@ public class P003 implements Problem{
         while (start.multiply(start).compareTo(large) < 0) {
             if (large.mod(start).equals(new BigInteger("0"))) {
                 large = large.divide(start);
-                if(Util.isPrime(large)){
+                if (Util.isPrime(large)) {
                     return large.toString();
                 }
             }

@@ -1,11 +1,14 @@
-package problems;
-
 /**
- * Created by alex on 5/10/16.
+ * https://projecteuler.net/problem=6
  */
-public class P006 {
+public class P006 implements Problem{
 
     public static void main(String args[]) {
+        System.out.println(new P006().solve());
+    }
+
+    @Override
+    public String solve() {
         long sumOfSquares = 0;
         long squareOfSum = 0;
         for (int i = 1; i <= 100; i++) {
@@ -13,6 +16,6 @@ public class P006 {
             squareOfSum += i;
         }
         squareOfSum *= squareOfSum;
-        System.out.print(squareOfSum - sumOfSquares);
+        return Long.toString(squareOfSum - sumOfSquares);
     }
 }

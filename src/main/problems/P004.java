@@ -1,11 +1,7 @@
-package problems;
-
-import util.Util;
-
 /**
  * https://projecteuler.net/problem=4
  */
-public class P004 implements Problem{
+public class P004 implements Problem {
 
     public static void main(String args[]) {
         System.out.println(new P004().solve());

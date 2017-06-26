@@ -1,17 +1,19 @@
-package problems;
-
 /**
- * Created by alex on 11/14/16.
- * Problem: https://projecteuler.net/problem=28
+ * https://projecteuler.net/problem=28
  */
-public class P028 {
+public class P028 implements Problem {
 
     public static void main(String args[]) {
+        System.out.println(new P028().solve());
+    }
+
+    @Override
+    public String solve() {
         double sum = 1;
         double incrementer = 0;
         double curr = 1;
 
-        for(int j=1; j<= 500; j++) {
+        for (int j = 1; j <= 500; j++) {
             // update incrementer bc there is one extra row/col
             incrementer += 2;
 
@@ -22,6 +24,6 @@ public class P028 {
             }
         }
 
-        System.out.println(sum);
+        return Double.toString(sum);
     }
 }

@@ -1,15 +1,18 @@
-package problems;
-
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by alex on 5/10/16.
+ * https://projecteuler.net/problem=7
  */
-public class P007 {
+public class P007 implements Problem {
 
     public static void main(String args[]) {
+        System.out.println(new P007().solve());
+    }
+
+    @Override
+    public String solve() {
         Set<Integer> primes = new HashSet<>();
         for (int i = 2; i < Integer.MAX_VALUE; i++) {
             boolean hasFactor = false;
@@ -25,6 +28,6 @@ public class P007 {
                 break;
             }
         }
-        System.out.print(Collections.max(primes));
+        return Integer.toString(Collections.max(primes));
     }
 }

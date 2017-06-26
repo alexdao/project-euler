@@ -1,9 +1,7 @@
-package problems;
-
 /**
  * https://projecteuler.net/problem=2
  */
-public class P002 implements Problem{
+public class P002 implements Problem {
 
     public static void main(String args[]) {
         System.out.println(new P002().solve());

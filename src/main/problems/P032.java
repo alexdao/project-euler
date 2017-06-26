@@ -1,5 +1,3 @@
-package problems;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -7,17 +5,10 @@ import java.util.List;
 /**
  * https://projecteuler.net/problem=32
  */
-public class P032 {
+public class P032 implements Problem {
 
     public static void main(String args[]) {
-        HashSet<Long> products = new HashSet<>();
-        for (long i = 123456789L; i <= 987654321L; i++) {
-            if (!checkUsesEveryDigit(i)) {
-                continue;
-            }
-            products.add(checkPandigital(i));
-        }
-        System.out.println(products.stream().mapToLong(Long::longValue).sum());
+        System.out.println(new P032().solve());
     }
 
     private static long checkPandigital(long n) {
@@ -51,5 +42,17 @@ public class P032 {
             chars.add(num.charAt(i));
         }
         return true;
+    }
+
+    @Override
+    public String solve() {
+        HashSet<Long> products = new HashSet<>();
+        for (long i = 123456789L; i <= 987654321L; i++) {
+            if (!checkUsesEveryDigit(i)) {
+                continue;
+            }
+            products.add(checkPandigital(i));
+        }
+        return Long.toString(products.stream().mapToLong(Long::longValue).sum());
     }
 }

@@ -1,13 +1,11 @@
-package util;
-
 import java.math.BigInteger;
 
 /**
- * Created by alex on 6/23/17.
+ * Common functions for Project Euler problems
  */
 public class Util {
 
-    public static boolean isPrime(BigInteger n) {
+    static boolean isPrime(BigInteger n) {
         if (n.compareTo(new BigInteger("1")) < 0)
             return false;
         else if (n.compareTo(new BigInteger("3")) <= 0)
@@ -24,7 +22,24 @@ public class Util {
         return true;
     }
 
-    public static boolean isPalindrone(String s) {
+    static boolean isPrime(int n){
+        if(n <= 1)
+            return false;
+        else if (n<=3)
+            return true;
+        else if (n % 2 == 0 || n % 3 == 0)
+            return false;
+        int i = 5;
+        while(i*i <= n){
+            if(n%i == 0 || n % (i+2)== 0){
+                return false;
+            }
+            i += 6;
+        }
+        return true;
+    }
+
+    static boolean isPalindrone(String s) {
         for(int i=0; i<=s.length()/2; i++) {
             if(s.charAt(i) != s.charAt(s.length()-i-1)) {
                 return false;
@@ -33,9 +48,18 @@ public class Util {
         return true;
     }
 
-    public static boolean isPalindrone(int i) {
+    static boolean isPalindrone(int i) {
         String s = "" + i;
         return isPalindrone(s);
+    }
+
+    static long calcFactorial(long n) {
+        long sum = 1;
+        for (long i = 1; i <= n; i++) {
+            sum *= i;
+
+        }
+        return sum;
     }
 
     public static void main (String args[]) {

@@ -1,20 +1,13 @@
-package problems;
-
 /**
- * Created by alex on 5/12/16.
+ * https://projecteuler.net/problem=17
  */
-public class P017 {
+public class P017 implements Problem {
 
     public static void main(String args[]) {
-        int total = 0;
-        for (int i = 1; i <= 1000; i++) {
-            int count = countLetters(i);
-            total += count;
-        }
-        System.out.println(total);
+        System.out.println(new P017().solve());
     }
 
-    public static int countLetters(int n) {
+    private static int countLetters(int n) {
         if (n > 999) {
             return 11;
         } else if (n > 99) {
@@ -38,7 +31,7 @@ public class P017 {
         }
     }
 
-    public static int countBase(int n) {
+    private static int countBase(int n) {
         if (n == 1) {
             return 3;
         } else if (n == 2) {
@@ -99,5 +92,15 @@ public class P017 {
             System.out.println("error");
             return -1;
         }
+    }
+
+    @Override
+    public String solve() {
+        int total = 0;
+        for (int i = 1; i <= 1000; i++) {
+            int count = countLetters(i);
+            total += count;
+        }
+        return Integer.toString(total);
     }
 }
