@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 
 /**
  * https://projecteuler.net/problem=32
@@ -28,26 +26,11 @@ public class P032 implements Problem {
         return 0;
     }
 
-    private static boolean checkUsesEveryDigit(long n) {
-        String num = "" + n;
-        List<Character> chars = new ArrayList<>();
-        for (int i = 0; i < num.length(); i++) {
-            if (num.charAt(i) == '0') {
-                return false;
-            }
-            if (chars.contains(num.charAt(i))) {
-                return false;
-            }
-            chars.add(num.charAt(i));
-        }
-        return true;
-    }
-
     @Override
     public String solve() {
         HashSet<Long> products = new HashSet<>();
-        for (long i = 123456789L; i <= 987654321L; i++) {
-            if (!checkUsesEveryDigit(i)) {
+        for (int i = 123456789; i <= 987654321; i++) {
+            if (!Util.isPandigital(i)) {
                 continue;
             }
             products.add(checkPandigital(i));

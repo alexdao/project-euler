@@ -1,4 +1,6 @@
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Common functions for Project Euler problems
@@ -63,6 +65,24 @@ public class Util {
 
         }
         return sum;
+    }
+
+    static boolean isPandigital(int n) {
+        String num = Integer.toString(n);
+        if (num.length() != 9) {
+            return false;
+        }
+        List<Character> chars = new ArrayList<>();
+        for (int i = 0; i < num.length(); i++) {
+            if (num.charAt(i) == '0') {
+                return false;
+            }
+            if (chars.contains(num.charAt(i))) {
+                return false;
+            }
+            chars.add(num.charAt(i));
+        }
+        return true;
     }
 
     static class Fraction {
