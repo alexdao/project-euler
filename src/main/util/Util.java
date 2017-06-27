@@ -69,12 +69,13 @@ public class Util {
 
     static boolean isPandigital(int n) {
         String num = Integer.toString(n);
-        if (num.length() != 9) {
-            return false;
-        }
+        int length = num.length();
         List<Character> chars = new ArrayList<>();
         for (int i = 0; i < num.length(); i++) {
             if (num.charAt(i) == '0') {
+                return false;
+            }
+            if (Integer.parseInt(Character.toString(num.charAt(i))) > length) {
                 return false;
             }
             if (chars.contains(num.charAt(i))) {

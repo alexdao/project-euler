@@ -6,202 +6,212 @@ class EulerTests {
 
     @Test
     void P001Test() {
-        assertEquals(new P001().solve(), "233168");
+        assertEquals("233168", new P001().solve());
     }
 
     @Test
     void P002Test() {
-        assertEquals(new P002().solve(), "4613732");
+        assertEquals("4613732", new P002().solve());
     }
 
     @Test
     void P003Test() {
-        assertEquals(new P003().solve(), "6857");
+        assertEquals("6857", new P003().solve());
     }
 
     @Test
     void P004Test() {
-        assertEquals(new P004().solve(), "906609");
+        assertEquals("906609", new P004().solve());
     }
 
     @Test
     void P006Test() {
-        assertEquals(new P006().solve(), "25164150");
+        assertEquals("25164150", new P006().solve());
     }
 
     @Test
     void P007Test() {
-        assertEquals(new P007().solve(), "104743");
+        assertEquals("104743", new P007().solve());
     }
 
     @Test
     void P008Test() {
-        assertEquals(new P008().solve(), "23514624000");
+        assertEquals("23514624000", new P008().solve());
     }
 
     @Test
     void P009Test() {
-        assertEquals(new P009().solve(), "3.1875E7");
+        assertEquals("3.1875E7", new P009().solve());
     }
 
     @Test
     void P010Test() {
-        assertEquals(new P010().solve(), "142913828922");
+        assertEquals("142913828922", new P010().solve());
     }
 
     @Test
     void P011Test() {
-        assertEquals(new P011().solve(), "70600674");
+        assertEquals("70600674", new P011().solve());
     }
 
     @Test
     void P012Test() {
-        assertEquals(new P012().solve(), "76576500");
+        assertEquals("76576500", new P012().solve());
     }
 
     @Test
     void P013Test() {
-        assertEquals(new P013().solve(), "5537376230");
+        assertEquals("5537376230", new P013().solve());
     }
 
     @Test
     void P014Test() {
-        assertEquals(new P014().solve(), "837799");
+        assertEquals("837799", new P014().solve());
     }
 
     @Test
     void P016Test() {
-        assertEquals(new P016().solve(), "1366");
+        assertEquals("1366", new P016().solve());
     }
 
     @Test
     void P017Test() {
-        assertEquals(new P017().solve(), "21124");
+        assertEquals("21124", new P017().solve());
     }
 
     @Test
     void P018Test() {
-        assertEquals(new P018().solve(), "1074");
+        assertEquals("1074", new P018().solve());
     }
 
     @Test
     void P020Test() {
-        assertEquals(new P020().solve(), "648");
+        assertEquals("648", new P020().solve());
     }
 
     @Test
     void P021Test() {
-        assertEquals(new P021().solve(), "31626");
+        assertEquals("31626", new P021().solve());
     }
 
     @Test
     void P022Test() {
-        assertEquals(new P022().solve(), "871198282");
+        assertEquals("871198282", new P022().solve());
     }
 
     @Test
     void P023Test() {
-        assertEquals(new P023().solve(), "4179871");
+        assertEquals("4179871", new P023().solve());
     }
 
     @Test
     void P024Test() {
-        assertEquals(new P024().solve(), "2783915460");
+        assertEquals("2783915460", new P024().solve());
     }
 
     @Test
     void P025Test() {
-        assertEquals(new P025().solve(), "4782");
+        assertEquals("4782", new P025().solve());
     }
 
     @Test
     void P026Test() {
-        assertEquals(new P026().solve(), "983");
+        assertEquals("983", new P026().solve());
     }
 
     @Test
     void P027Test() {
-        assertEquals(new P027().solve(), "-59231");
+        assertEquals("-59231", new P027().solve());
     }
 
     @Test
     void P028Test() {
-        assertEquals(new P028().solve(), "6.69171001E8");
+        assertEquals("6.69171001E8", new P028().solve());
     }
 
     @Test
     void P029Test() {
-        assertEquals(new P029().solve(), "9183");
+        assertEquals("9183", new P029().solve());
     }
 
     @Test
     void P030Test() {
-        assertEquals(new P030().solve(), "443839");
+        assertEquals("443839", new P030().solve());
     }
 
     @Test
     void P031Test() {
-        assertEquals(new P031().solve(), "73682");
+        assertEquals("73682", new P031().solve());
     }
 
     @Test
     void P032Test() {
-        assertEquals(new P032().solve(), "45228");
+        assertEquals("45228", new P032().solve());
     }
 
     @Test
     void P033Test() {
-        assertEquals(new P033().solve(), "100");
+        assertEquals("100", new P033().solve());
     }
 
     @Test
     void P034Test() {
-        assertEquals(new P034().solve(), "40730");
+        assertEquals("40730", new P034().solve());
     }
 
     @Test
     void P035Test() {
-        assertEquals(new P035().solve(), "55");
+        assertEquals("55", new P035().solve());
     }
 
     @Test
     void P036Test() {
-        assertEquals(new P036().solve(), "872187");
+        assertEquals("872187", new P036().solve());
     }
 
     @Test
     void P037Test() {
-        assertEquals(new P037().solve(), "748317");
+        assertEquals("748317", new P037().solve());
     }
 
     @Test
     void P038Test() {
-        assertEquals(new P038().solve(), "932718654");
+        assertEquals("932718654", new P038().solve());
     }
 
     @Test
     void P039Test() {
-        assertEquals(new P039().solve(), "840");
+        assertEquals("840", new P039().solve());
     }
 
     @Test
     void P040Test() {
-        assertEquals(new P040().solve(), "210");
+        assertEquals("210", new P040().solve());
+    }
+
+    @Test
+    void P041Test() {
+        assertEquals("7652413", new P041().solve());
+    }
+
+    @Test
+    void P042Test() {
+        assertEquals("162", new P042().solve());
     }
 
     @Test
     void P043Test() {
-        assertEquals(new P043().solve(), "16695334890");
+        assertEquals("16695334890", new P043().solve());
     }
 
     @Test
     void P055Test() {
-        assertEquals(new P055().solve(), "");
+        assertEquals("", new P055().solve());
     }
 
     @Test
     void P059Test() {
-        assertEquals(new P059().solve(), "");
+        assertEquals("", new P059().solve());
     }
 
 }

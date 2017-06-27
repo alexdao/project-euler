@@ -78,4 +78,14 @@ class UtilTest {
         assertEquals(2, testFraction4.getDenominator());
     }
 
+    @Test
+    void isPandigital() {
+        assertEquals(true, Util.isPandigital(123456789));
+        assertEquals(true, Util.isPandigital(12345));
+        assertEquals(false, Util.isPandigital(112345678));
+        assertEquals(true, Util.isPandigital(1));
+        assertEquals(false, Util.isPandigital(124));
+        assertEquals(false, Util.isPandigital(234));
+    }
+
 }
