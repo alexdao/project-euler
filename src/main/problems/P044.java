@@ -32,7 +32,7 @@ public class P044 implements Problem {
             int difference = currPentagonal - n;
             if (pentagonals.contains(difference)) {
                 int sum = currPentagonal + n;
-                if (isPentagonal(sum)) {
+                if (Util.isPentagonal(sum)) {
                     return Math.abs(currPentagonal - n);
                 }
             }
@@ -40,10 +40,7 @@ public class P044 implements Problem {
         return -1;
     }
 
-    private boolean isPentagonal(int sum) {
-        double n = (Math.sqrt(24 * sum + 1) + 1) / 6;
-        return n == Math.floor(n);
-    }
+
 
 
 }

@@ -86,6 +86,16 @@ public class Util {
         return true;
     }
 
+    static boolean isPentagonal(long n) {
+        double i = (Math.sqrt(24 * n + 1) + 1) / 6;
+        return i == Math.floor(i);
+    }
+
+    static boolean isHexagonal(long n) {
+        double i = (Math.sqrt(8 * n + 1) + 1) / 4;
+        return i == Math.floor(i);
+    }
+
     static class Fraction {
         int numerator;
         int denominator;
