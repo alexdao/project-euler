@@ -67,6 +67,43 @@ public class Util {
         return sum;
     }
 
+    static int calcFactorial(int n) {
+        if (n == 0) {
+            return 1;
+        }
+        int sum = 1;
+        for (int i = 1; i <= n; i++) {
+            sum *= i;
+
+        }
+        return sum;
+    }
+
+    static BigInteger calcFactorial(BigInteger n) {
+        BigInteger factorial = BigInteger.valueOf(1);
+        if (n.equals(BigInteger.valueOf(0))) {
+            return factorial;
+        }
+
+        for (int i = 1; i <= n.intValue(); i++) {
+            factorial = factorial.multiply(BigInteger.valueOf(i));
+        }
+
+        return factorial;
+    }
+
+    static int combination(int n, int r) {
+        return calcFactorial(n) / (calcFactorial(r) * calcFactorial(n - r));
+    }
+
+    static long combination(long n, long r) {
+        return calcFactorial(n) / (calcFactorial(r) * calcFactorial(n - r));
+    }
+
+    static BigInteger combination(BigInteger n, BigInteger r) {
+        return calcFactorial(n).divide(calcFactorial(r).multiply(calcFactorial(n.subtract(r))));
+    }
+
     static boolean isPandigital(int n) {
         String num = Integer.toString(n);
         int length = num.length();
@@ -126,7 +163,6 @@ public class Util {
     }
 
     public static void main(String args[]) {
-        String s = "1234321";
-        System.out.println(isPalindrone(s));
+        System.out.println(combination(new BigInteger("66"), new BigInteger("2")));
     }
 }
