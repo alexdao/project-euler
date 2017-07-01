@@ -1,6 +1,8 @@
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Common functions for Project Euler problems
@@ -133,6 +135,27 @@ public class Util {
         return i == Math.floor(i);
     }
 
+    static Set<Integer> getPrimeFactorization(int n) {
+        Set<Integer> primeFactors = new HashSet<>();
+        return getPrimeFactorizationHelper(n, primeFactors);
+    }
+
+    private static Set<Integer> getPrimeFactorizationHelper(int n, Set<Integer> primeFactors) {
+        boolean added = false;
+        for (int i = 2; i <= n; i++) {
+            if (n % i == 0) {
+                added = true;
+                primeFactors.add(i);
+                n /= i;
+                break;
+            }
+        }
+        if (added) {
+            getPrimeFactorizationHelper(n, primeFactors);
+        }
+        return primeFactors;
+    }
+
     static class Fraction {
         int numerator;
         int denominator;
@@ -163,6 +186,9 @@ public class Util {
     }
 
     public static void main(String args[]) {
-        System.out.println(combination(new BigInteger("66"), new BigInteger("2")));
+        Set<Integer> primes = getPrimeFactorization(20);
+        for(Integer i: primes) {
+            System.out.println(i);
+        }
     }
 }
